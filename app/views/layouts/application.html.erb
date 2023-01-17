@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DailyWorld</title>
+    <%= favicon_link_tag asset_path('article_fav.png') %>
+    <%= render 'shared/link_and_script' %>
+
+  </head>
+
+  <body>
+    <main class="container mx-auto mt-28 px-5 flex">
+      <%= yield %>
+    </main>
+  </body>
+</html>

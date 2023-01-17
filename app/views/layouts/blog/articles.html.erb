@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= favicon_link_tag asset_path('article_fav.png') %>
+    <title> DailyWorld | Blog </title>
+    <%= render 'shared/link_and_script' %>
+  </head>
+  <body>
+    <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900">
+      <%= yield %>
+    </main>
+    <%= render 'shared/news_letters' %>
+    <%= render 'shared/footer' %>
+  </body>
+</html>

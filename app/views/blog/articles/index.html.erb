@@ -1,0 +1,43 @@
+<div class="md:container md:mx-auto px-5">
+    <h1 class="text-3xl font-bold underline pb-5">
+      List of Articles
+    </h1>
+
+
+  <div class="relative overflow-x-auto">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <tr>
+        <th scope="col" class="px-6 py-3">
+          Serial
+        </th>
+        <th scope="col" class="px-6 py-3">
+          Title
+        </th>
+        <th scope="col" class="px-6 py-3">
+         Action
+        </th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @articles.each.with_index(1) do |article, index| %>
+      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+         <%= index %>
+        </th>
+        <td class="px-6 py-4">
+          <%= article.title.titleize %>
+        </td>
+        <td class="px-6 py-4">
+        <%= link_to "Show", article_path(article) %> |
+        <%= link_to "Edit", '' %> |
+        <%= link_to "Destroy", article_path(article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        </td>
+      </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
