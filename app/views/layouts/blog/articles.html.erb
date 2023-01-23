@@ -6,9 +6,11 @@
     <%= render 'shared/link_and_script' %>
   </head>
   <body>
-    <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900">
-      <%= yield %>
-    </main>
+  <%= render 'shared/articles/nav' %>
+  <main class="pt-8 relative top-14 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900">
+    <%#= render 'shared/flash' %>
+    <%= yield %>
+  </main>
     <%= render 'shared/news_letters' %>
     <%= render 'shared/footer' %>
   </body>
