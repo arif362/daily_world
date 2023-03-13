@@ -1,0 +1,21 @@
+# Logfile created on 2023-03-13 23:58:46 +0600 by logger.rb/v1.5.3
+I, [2023-03-14T00:02:23.751941 #10623]  INFO -- : Started GET "/" for ::1 at 2023-03-14 00:02:23 +0600
+D, [2023-03-14T00:02:23.782698 #10623] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+I, [2023-03-14T00:02:23.808369 #10623]  INFO -- : Processing by Blog::ArticlesController#index as HTML
+D, [2023-03-14T00:02:23.811158 #10623] DEBUG -- : This is a debug message
+I, [2023-03-14T00:02:23.811269 #10623]  INFO -- : This is a debug message
+D, [2023-03-14T00:02:23.824015 #10623] DEBUG -- :   Rendering layout layouts/blog/articles.html.erb
+D, [2023-03-14T00:02:23.824160 #10623] DEBUG -- :   Rendering blog/articles/index.html.erb within layouts/blog/articles
+D, [2023-03-14T00:02:23.827182 #10623] DEBUG -- :   [1m[36mBlog::Article Load (0.5ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+D, [2023-03-14T00:02:23.828045 #10623] DEBUG -- :   ↳ app/views/blog/articles/index.html.erb:28
+D, [2023-03-14T00:02:23.845597 #10623] DEBUG -- :   [1m[36mBlog::Article Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "blog_articles"[0m
+D, [2023-03-14T00:02:23.846143 #10623] DEBUG -- :   ↳ app/views/blog/articles/index.html.erb:47
+I, [2023-03-14T00:02:24.092743 #10623]  INFO -- :   Rendered blog/articles/index.html.erb within layouts/blog/articles (Duration: 268.4ms | Allocations: 291611)
+D, [2023-03-14T00:02:24.191812 #10623] DEBUG -- :   Rendered shared/_link_and_script.html.erb (Duration: 22.0ms | Allocations: 19795)
+D, [2023-03-14T00:02:24.192705 #10623] DEBUG -- :   Rendered shared/articles/_nav.html.erb (Duration: 0.4ms | Allocations: 185)
+D, [2023-03-14T00:02:24.193584 #10623] DEBUG -- :   Rendered shared/_news_letters.html.erb (Duration: 0.4ms | Allocations: 110)
+D, [2023-03-14T00:02:24.194805 #10623] DEBUG -- :   Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 228)
+I, [2023-03-14T00:02:24.194956 #10623]  INFO -- :   Rendered layout layouts/blog/articles.html.erb (Duration: 370.8ms | Allocations: 343227)
+I, [2023-03-14T00:02:24.195378 #10623]  INFO -- : Completed 200 OK in 387ms (Views: 367.2ms | ActiveRecord: 5.7ms | Allocations: 348509)
+
+

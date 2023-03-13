@@ -3,8 +3,11 @@ class Blog::ArticlesController < ApplicationController
   before_action :get_article, only: [:show, :download_pdf, :view_pdf]
 
   def index
+    logger.debug("This is a debug message")
+    logger.info("This is a debug message")
+
     flash[:notice] = "You have successfully logged out."
-    @articles = Blog::Article.all
+    @articles = Blog::Article.paginate(page: params[:page], per_page: 25)
   end
 
   def download_pdf

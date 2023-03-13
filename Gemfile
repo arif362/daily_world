@@ -76,3 +76,4 @@ gem "tailwindcss-rails", "~> 2.0"
 gem "figaro"
 gem 'pg', '~> 1.4', '>= 1.4.5'
 gem 'prawn'
+gem 'will_paginate', '~> 3.3'
