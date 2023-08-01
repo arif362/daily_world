@@ -7,7 +7,25 @@ class Blog::ArticlesController < ApplicationController
     logger.info("This is a debug message")
 
     flash[:notice] = "You have successfully logged out."
-    @articles = Blog::Article.paginate(page: params[:page], per_page: 25)
+    @articles = Blog::Article.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
+  end
+
+  def new
+    @article = Blog::Article.new
+  end
+
+  def create
+    @article = Blog::Article.new(article_params)
+    @article.author_id = Blog::Author.last.id
+    if @article.save!
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def show
+
   end
 
   def download_pdf
@@ -21,6 +39,10 @@ class Blog::ArticlesController < ApplicationController
   end
 
   private
+
+  def article_params
+    params.require(:blog_article).permit(:title, :body, :image)
+  end
 
   def get_article
     @article = Blog::Article.find_by(id: params[:id])
