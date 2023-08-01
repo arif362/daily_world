@@ -3,7 +3,10 @@
 <% end %>
 <div class="md:container md:mx-auto">
     <h1 class="text-3xl font-bold underline pb-5">
-      List of Articles
+      <div class="text-left"> List of Articles </div>
+      <div class="text-right">
+       <%= link_to 'Add', new_article_path %>
+      </div>
     </h1>
 
 
@@ -14,6 +17,9 @@
       <tr>
         <th scope="col" class="px-6 py-3">
           Serial
+        </th>
+        <th scope="col" class="px-6 py-3">
+          Image
         </th>
         <th scope="col" class="px-6 py-3">
           Title
@@ -30,6 +36,19 @@
         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
          <%= index %>
         </th>
+        <td class="px-6 py-4">
+          <%=
+            if article.image.attached?
+              if article.image.content_type.include?('video')
+                video_tag(url_for(article.image), controls: true, preload: 'none', size: "200x200")
+                else
+                   image_tag article.image.previewable? ?  article.image.preview(resize_to_fit: [200, 200]) : url_for(article.image.variant(resize_to_fit: [200, 200]))
+              end
+            end
+          %>
+          <%#= image_tag rails_storage_proxy_path(article.image.variant(:thumb))  if article.image.attached? %>
+          <%#= image_tag cdn_image_url(article.image.variant(:thumb)) if article.image.attached? %>
+        </td>
         <td class="px-6 py-4">
           <%= article.title.titleize %>
         </td>
