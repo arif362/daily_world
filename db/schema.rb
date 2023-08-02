@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_28_223430) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_02_035647) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -55,6 +55,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_28_223430) do
     t.string "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "article_id", null: false
+    t.bigint "author_id", null: false
+    t.index ["article_id"], name: "index_blog_comments_on_article_id"
+    t.index ["author_id"], name: "index_blog_comments_on_author_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.string "notifiable_type", null: false
+    t.bigint "notifiable_id", null: false
+    t.string "notificationable_type", null: false
+    t.bigint "notificationable_id", null: false
+    t.string "title"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["notifiable_type", "notifiable_id"], name: "index_notifications_on_notifiable"
+    t.index ["notificationable_type", "notificationable_id"], name: "index_notifications_on_notificationable"
   end
 
   create_table "users", force: :cascade do |t|
@@ -67,4 +84,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_28_223430) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "blog_articles", "users", column: "author_id"
+  add_foreign_key "blog_comments", "blog_articles", column: "article_id"
+  add_foreign_key "blog_comments", "users", column: "author_id"
 end

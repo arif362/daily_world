@@ -1,69 +1,16 @@
-<% content_for :blog_header do %>
-  All Blogs
-<% end %>
-<div class="md:container md:mx-auto">
-    <h1 class="text-3xl font-bold underline pb-5">
-      <div class="text-left"> List of Articles </div>
-      <div class="text-right">
-       <%= link_to 'Add', new_article_path %>
-      </div>
-    </h1>
+<%# content_for :blog_header do %>
+<!--  All Blogs-->
+<%# end %>
 
+<div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
+  <article class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
 
-  <div class="relative overflow-x-auto">
-    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-
-      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-      <tr>
-        <th scope="col" class="px-6 py-3">
-          Serial
-        </th>
-        <th scope="col" class="px-6 py-3">
-          Image
-        </th>
-        <th scope="col" class="px-6 py-3">
-          Title
-        </th>
-        <th scope="col" class="px-6 py-3">
-         Action
-        </th>
-      </tr>
-      </thead>
-
-      <tbody>
-      <% @articles.each.with_index(1) do |article, index| %>
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-         <%= index %>
-        </th>
-        <td class="px-6 py-4">
-          <%=
-            if article.image.attached?
-              if article.image.content_type.include?('video')
-                video_tag(url_for(article.image), controls: true, preload: 'none', size: "200x200")
-                else
-                   image_tag article.image.previewable? ?  article.image.preview(resize_to_fit: [200, 200]) : url_for(article.image.variant(resize_to_fit: [200, 200]))
-              end
-            end
-          %>
-          <%#= image_tag rails_storage_proxy_path(article.image.variant(:thumb))  if article.image.attached? %>
-          <%#= image_tag cdn_image_url(article.image.variant(:thumb)) if article.image.attached? %>
-        </td>
-        <td class="px-6 py-4">
-          <%= article.title.titleize %>
-        </td>
-        <td class="px-6 py-4">
-        <%= link_to "Show", article_path(article) %> |
-        <%= link_to "Edit", '' %> |
-        <%= link_to "Download", download_pdf_article_path(article) %> |
-        <%= link_to "View as PDF", pdf_mode_article_path(article) %> |
-        <%= link_to "Destroy", article_path(article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-        </td>
-      </tr>
+    <section class="not-format">
+      <%= render 'blog/articles/article_form' %>
+      <% @articles.each do |article| %>
+        <%= render 'blog/articles/article_list', article: article %>
       <% end %>
-      </tbody>
-    </table>
-    <%= will_paginate @articles %>
-
-  </div>
+      <%= will_paginate @articles, class: 'text-gray' %>
+    </section>
+  </article>
 </div>
