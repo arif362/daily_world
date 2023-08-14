@@ -9,10 +9,11 @@ require 'faker'
 
 puts 'Populating articles by fake data'
 
-Blog::Author.destroy_all
-Blog::Article.destroy_all
+# Blog::Comment.destroy_all
+# Blog::Article.destroy_all
+# Blog::Author.destroy_all
 
-5.times.each do |_t|
+10.times.each do |_t|
   author = Blog::Author.create(full_name:Faker::Name.unique.name)
   puts 'Author Created'
 
@@ -21,6 +22,18 @@ Blog::Article.destroy_all
     article.title = Faker::Lorem.unique.sentence(word_count: 3)
     article.body = Faker::Lorem.paragraph_by_chars(number: 256, supplemental: false)
     article.save!
+
+    puts 'Article created'
+
+    100.times.each do |_t|
+      comment = article.comments.new
+      comment.body = Faker::Lorem.unique.sentence(word_count: 3)
+      comment.author = author
+      comment.save!
+
+      puts 'Comment Created'
+    end
+
   end
-  puts "Article created under the author name : #{author.full_name}"
+  puts "Articles and Comments created under the author name : #{author.full_name}"
 end
