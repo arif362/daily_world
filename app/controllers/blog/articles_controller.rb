@@ -3,7 +3,7 @@ class Blog::ArticlesController < ApplicationController
   before_action :get_article, only: [:show, :download_pdf, :view_pdf]
 
   def index
-    @articles = Blog::Article.includes(:author, :comments).order(created_at: :desc).paginate(page: params[:page], per_page: 30)
+    @articles = Blog::Article.includes(:author, :comments).order(created_at: :desc).paginate(page: params[:page], per_page: 50)
   end
 
   def new
