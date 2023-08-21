@@ -1,3 +1,5 @@
 <% flash.each do |name, msg| -%>
-  <%= content_tag :div, msg, class: name %>
+  <div class="container mx-auto mt-28 px-5 py-2.5 flex justify-center text-white bg-green-100" >
+    <%= content_tag :div, msg %>
+  </div>
 <% end -%>
