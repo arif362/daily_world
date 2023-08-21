@@ -1,9 +1,10 @@
 class Blog::ArticlesController < ApplicationController
-  # require "prawn"
+  before_action :authenticate_user!, only: [:create, :show]
+
   before_action :get_article, only: [:show, :download_pdf, :view_pdf]
 
   def index
-    @articles = Blog::Article.includes(:author, :comments).order(created_at: :desc).paginate(page: params[:page], per_page: 30)
+    @articles = Blog::Article.includes(:comments, author: :profile_photo_attachment).order(created_at: :desc).paginate(page: params[:page], per_page: 50)
   end
 
   def new
@@ -11,10 +12,9 @@ class Blog::ArticlesController < ApplicationController
   end
 
   def create
-    @article = Blog::Article.new(article_params)
-    @article.author_id = Blog::Author.last.id
+    @article = current_user.articles.new(article_params)
     if @article.save!
-      redirect_to root_path
+      redirect_to root_path, notice: 'Post created successfully!'
     else
       render :new, status: :unprocessable_entity
     end

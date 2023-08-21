@@ -80,3 +80,5 @@ gem "figaro"
 gem 'pg', '~> 1.4', '>= 1.4.5'
 gem 'prawn'
 gem 'will_paginate', '~> 3.3'
+gem 'bcrypt', '~> 3.1.7'
+

@@ -8,7 +8,6 @@ class Blog::Article < ApplicationRecord
    end
 
    #Validations
-   validates :title, presence: true, uniqueness: true, length: { minimum: 5 }
    validates :body, presence: true
    validates :image,
              blob: { size_range: 1..(15.megabytes) },

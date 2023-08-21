@@ -8,8 +8,13 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <%= render 'shared/articles/nav' %>
+    <div class="container flex flex-wrap items-center justify-between mx-auto">
+      <%= render 'shared/flash' %>
+    </div>
+    <main class="container mx-auto mt-28 px-5 flex justify-center">
       <%= yield %>
     </main>
+  <%= render 'shared/footer' %>
   </body>
 </html>
