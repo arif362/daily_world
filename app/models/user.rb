@@ -60,15 +60,15 @@ class User < ApplicationRecord
     UserMailer.password_reset(self, password_reset_token).deliver_now
   end
 
+  def send_confirmation_email!
+    confirmation_token = generate_confirmation_token
+    UserMailer.confirmation(self, confirmation_token).deliver_now
+  end
+
   private
 
   def downcase_email
     self.email = email.downcase
-  end
-
-  def send_confirmation_email!
-    confirmation_token = generate_confirmation_token
-    UserMailer.confirmation(self, confirmation_token).deliver_now
   end
 
   def downcase_unconfirmed_email
