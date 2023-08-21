@@ -1,12 +1,8 @@
-<%# content_for :blog_header do %>
-<!--  All Blogs-->
-<%# end %>
-
 <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
   <article class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
 
     <section class="not-format">
-      <%= render 'blog/articles/article_form' %>
+      <%= render 'blog/articles/article_form'%>
       <% @articles.each do |article| %>
         <%= render 'blog/articles/article_list', article: article %>
       <% end %>
