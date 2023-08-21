@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   CONFIRMATION_TOKEN_EXPIRATION = 10.minutes
-  MAILER_FROM_EMAIL = "no-reply@example.com"
+  PASSWORD_RESET_TOKEN_EXPIRATION = 10.minutes
+  MAILER_FROM_EMAIL = "no-reply@dw.com"
 
   attr_accessor :current_password
 
