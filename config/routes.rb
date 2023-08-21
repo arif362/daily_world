@@ -12,6 +12,11 @@ Rails.application.routes.draw do
   get "account", to: "users#edit"
   delete "account", to: "users#destroy"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :active_sessions, only: [:destroy] do
+    collection do
+      delete "destroy_all"
+    end
+  end
 
   # Defines the root path route ("/")
   draw(:blog)
