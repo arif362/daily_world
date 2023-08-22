@@ -4,6 +4,10 @@ class User < ApplicationRecord
   MAILER_FROM_EMAIL = "no-reply@dw.com"
 
   has_many :active_sessions, dependent: :destroy
+  has_one_attached :profile_photo do |attachable|
+    attachable.variant :thumb, resize_to_limit: [100, 100]
+  end
+  has_many :notifications, as: :notifiable, dependent: :destroy
 
   attr_accessor :current_password
 
