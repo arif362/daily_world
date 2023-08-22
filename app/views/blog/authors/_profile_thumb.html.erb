@@ -1,1 +1,1 @@
-<%= image_tag (user.profile_photo.attcahed? ? user.profile_photo.variant(:thumb) : 'default_profile.png'), alt: "#{user.full_name.first(2)}" %>
+<%= image_tag (user.profile_photo.attcahed? ? user.profile_photo.variant(:thumb) : 'default_profile.png'), alt: "#{user&.full_name&.first(2)}" %>

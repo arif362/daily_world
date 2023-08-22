@@ -12,8 +12,10 @@ class Blog::ArticlesController < ApplicationController
   end
 
   def create
+    current_user.update_columns(type: 'Blog::Author')
     @article = current_user.articles.new(article_params)
-    if @article.save!
+    @article.notifications.build(notifiable: current_user, body: 'Article created successfully')
+      if @article.save!
       redirect_to root_path, notice: 'Post created successfully!'
     else
       render :new, status: :unprocessable_entity

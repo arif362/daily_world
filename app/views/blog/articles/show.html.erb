@@ -5,7 +5,7 @@
         <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
           <%= image_tag (@article.author.profile_photo.attached? ? @article.author.profile_photo.variant(:thumb) : 'default_profile.png'),
                         class: "mr-4 w-16 h-16 rounded-full",
-                        alt: "#{@article.author.full_name.first(2)}" %>
+                        alt: "#{@article.author&.full_name&.first(2)}" %>
 
           <div>
             <a href="#" rel="author" class="text-xl font-bold text-gray-900 dark:text-white"> <%= @article.author.full_name %> </a>
