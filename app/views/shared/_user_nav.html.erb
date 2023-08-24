@@ -23,6 +23,9 @@
       <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a></li>
       <li><a href="<%= articles_path %>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"> Articles </a></li>
       <li><a href="<%= job_posts_path %>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"> Jobs </a></li>
+      <% if current_user.is_a?(Admin::Admin) %>
+      <li><a href="<%= admin_admins_path %>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"> Admin Panel </a></li>
+      <% end %>
     </ul>
     <div class="py-2">
       <%= button_to logout_path, method: :delete, class: 'block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white' do %>

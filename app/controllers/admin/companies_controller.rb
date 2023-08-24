@@ -1,4 +1,6 @@
 class Admin::CompaniesController < ApplicationController
+  layout 'admin/admins'
+
   before_action :set_admin_company, only: %i[ show edit update destroy ]
 
   # GET /admin/companies or /admin/companies.json

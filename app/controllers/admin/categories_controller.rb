@@ -1,4 +1,6 @@
 class Admin::CategoriesController < ApplicationController
+  layout 'admin/admins'
+
   before_action :set_admin_category, only: %i[ show edit update destroy ]
 
   # GET /admin/categories or /admin/categories.json
