@@ -30,7 +30,7 @@ scope module: 'blog' do
     end
 
     resources :articles, concerns: :commentable do
-      root to: "blog/articles#newsfeed"
+      root to: "blog/articles#index"
       member do
         get 'download_pdf'
         get 'view_pdf', to: 'articles#view_pdf', as: :pdf_mode

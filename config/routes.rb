@@ -21,4 +21,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   draw(:blog)
+  draw(:job)
 end
