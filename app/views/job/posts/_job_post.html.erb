@@ -1,0 +1,27 @@
+<div id="<%= dom_id job_post %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Title:</strong>
+    <%= job_post.title %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Job/company:</strong>
+    <%= job_post.job_company_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= job_post.description %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Deadline:</strong>
+    <%= job_post.deadline %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this post", job_post, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this post', edit_job_post_path(job_post), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
