@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= favicon_link_tag asset_path('article_fav.png') %>
+  <title> Daily Articles </title>
+  <%= render 'shared/link_and_script' %>
+</head>
+<body>
+<% content_for :module do %>
+  <a href="<%= admins_path %>" class="flex items-center">
+    <%= image_tag 'article_fav.png', class: 'h-6 mr-3 sm:h-9', alt: 'Daily world Logo' %>
+    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Admin | Daily World </span>
+  </a>
+<% end %>
+<%= render 'shared/articles/nav' %>
+<main class="pt-8 relative top-14 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900 justify-center">
+  <%= yield %>
+</main>
+<%= render 'shared/news_letters' %>
+<%= render 'shared/footer' %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+
+</body>
+</html>

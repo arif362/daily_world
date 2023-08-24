@@ -2,7 +2,9 @@
   <div class="container flex flex-wrap items-center justify-between mx-auto">
     <%= content_for :module %>
     <div class="flex items-center">
+      <% if user_signed_in? %>
       <%= render 'shared/notifications' %>
+      <% end %>
       <%= render 'shared/user_nav' %>
     </div>
   </div>
