@@ -6,6 +6,7 @@ class Blog::Article < ApplicationRecord
    has_one_attached :image do |attachable|
                       attachable.variant :thumb, resize_to_limit: [100, 100]
    end
+   has_many :notifications, as: :notificationable, dependent: :destroy
 
    #Validations
    validates :body, presence: true

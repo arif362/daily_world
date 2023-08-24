@@ -5,6 +5,7 @@ class Blog::Author < User
   has_one_attached :profile_photo do |attachable|
     attachable.variant :thumb, resize_to_limit: [100, 100]
   end
+  has_many :notifications, as: :notifiable, dependent: :destroy
 
   validates :full_name, presence: true
 
