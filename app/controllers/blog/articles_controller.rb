@@ -4,7 +4,7 @@ class Blog::ArticlesController < ApplicationController
   before_action :get_article, only: [:show, :download_pdf, :view_pdf]
 
   def index
-    @articles = Blog::Article.includes(:comments, author: :profile_photo_attachment).order(created_at: :desc).paginate(page: params[:page], per_page: 50)
+    @articles = Blog::Article.includes(:comments, author: [user: :profile_photo_attachment]).order(created_at: :desc).paginate(page: params[:page], per_page: 50)
   end
 
   def new
@@ -12,8 +12,8 @@ class Blog::ArticlesController < ApplicationController
   end
 
   def create
-    current_user.update_columns(type: 'Blog::Author')
-    @article = current_user.articles.new(article_params)
+    author = Blog::Author.find_or_create_by(user: current_user)
+    @article = author.articles.new(article_params)
     @article.notifications.build(notifiable: current_user, body: 'Article created successfully')
       if @article.save!
       redirect_to root_path, notice: 'Post created successfully!'

@@ -8,6 +8,9 @@ class User < ApplicationRecord
     attachable.variant :thumb, resize_to_limit: [100, 100]
   end
   has_many :notifications, as: :notifiable, dependent: :destroy
+  has_many :profiles, dependent: :restrict_with_exception
+  has_one :author, class_name: 'Blog::Author', dependent: :restrict_with_exception
+  has_one :admin, class_name: 'Admin::Admin' , dependent: :restrict_with_exception
 
   attr_accessor :current_password
 
@@ -17,7 +20,7 @@ class User < ApplicationRecord
 
   validates :email, format: {with: URI::MailTo::EMAIL_REGEXP}, presence: true, uniqueness: true
   validates :unconfirmed_email, format: {with: URI::MailTo::EMAIL_REGEXP, allow_blank: true}
-
+  validates_presence_of :full_name
 
   def confirm!
     if unconfirmed_or_reconfirming?

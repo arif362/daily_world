@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :profiles
   post "login", to: "sessions#create"
   delete "logout", to: "sessions#destroy"
   get "login", to: "sessions#new"
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
   resources :notifications
   put "account", to: "users#update"
   get "account", to: "users#edit"
-  get "profile", to: "users#show"
+  get "user_profile", to: "users#show"
   delete "account", to: "users#destroy"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :active_sessions, only: [:destroy] do
