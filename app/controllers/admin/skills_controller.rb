@@ -1,6 +1,6 @@
 class Admin::SkillsController < ApplicationController
   layout 'admin/admins'
-
+  before_action :authenticate_user!, :authenticate_admin!
   before_action :set_admin_skill, only: %i[ show edit update destroy ]
 
   # GET /admin/skills or /admin/skills.json

@@ -8,6 +8,12 @@
   </head>
 
   <body>
+  <% content_for :module do %>
+    <a href="<%= root_path %>" class="flex items-center">
+      <%= image_tag 'article_fav.png', class: 'h-6 mr-3 sm:h-9', alt: 'Daily world Logo' %>
+      <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"> Daily World </span>
+    </a>
+  <% end %>
   <%= render 'shared/articles/nav' %>
     <div class="container flex flex-wrap items-center justify-between mx-auto">
       <%= render 'shared/flash' %>

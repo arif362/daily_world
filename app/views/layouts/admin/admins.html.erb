@@ -2,7 +2,7 @@
 <html>
 <head>
   <%= favicon_link_tag asset_path('article_fav.png') %>
-  <title> Daily Articles </title>
+  <title> Daily World | Admin </title>
   <%= render 'shared/link_and_script' %>
 </head>
 <body>
@@ -13,6 +13,9 @@
   </a>
 <% end %>
 <%= render 'shared/articles/nav' %>
+<div class="container flex flex-wrap items-center justify-between mx-auto">
+  <%= render 'shared/flash' %>
+</div>
 <main class="relative top-14 pb-16 lg:pb-24 bg-white dark:bg-gray-900 justify-center">
   <%= render 'admin/shared/admin_sidebar' %>
 

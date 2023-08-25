@@ -21,8 +21,8 @@
     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
       <li><a href="<%= user_profile_path %>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a></li>
       <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a></li>
-      <li><a href="<%= articles_path %>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"> Articles </a></li>
-      <li><a href="<%= job_posts_path %>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"> Jobs </a></li>
+      <li><a href="<%= articles_path %>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"> Daily Articles </a></li>
+      <li><a href="<%= job_posts_path %>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"> Daily Jobs </a></li>
       <% if current_user.admin.present? %>
       <li><a href="<%= admin_admins_path %>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"> Admin Panel </a></li>
       <% end %>
