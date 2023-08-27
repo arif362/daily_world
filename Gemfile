@@ -54,6 +54,8 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
+  gem 'rspec-rails', '~> 6.0.0'
+  gem 'factory_girl_rails', '~> 4.5'
 end
 
 group :development do
@@ -81,4 +83,5 @@ gem 'pg', '~> 1.4', '>= 1.4.5'
 gem 'prawn'
 gem 'will_paginate', '~> 3.3'
 gem 'bcrypt', '~> 3.1.7'
+gem 'grape'
 
