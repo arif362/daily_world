@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   include Authentication
-  http_basic_authenticate_with name: "arif", password: "123456"
+  # http_basic_authenticate_with name: "arif", password: "123456"
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   private

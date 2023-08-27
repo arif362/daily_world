@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   end
 
   # Defines the root path route ("/")
+  draw(:api)
   draw(:blog)
   draw(:job)
   draw(:admin)
