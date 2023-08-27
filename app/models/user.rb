@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :profiles, dependent: :restrict_with_exception
   has_one :author, class_name: 'Blog::Author', dependent: :restrict_with_exception
   has_one :admin, class_name: 'Admin::Admin' , dependent: :restrict_with_exception
+  has_many :authentication_tokens, dependent: :destroy
 
   attr_accessor :current_password
 

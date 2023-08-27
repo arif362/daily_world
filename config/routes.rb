@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Base => '/'
+
   resources :profiles
   post "login", to: "sessions#create"
   delete "logout", to: "sessions#destroy"

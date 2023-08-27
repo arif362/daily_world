@@ -75,6 +75,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'simplecov', require: false
 end
 
 gem "tailwindcss-rails", "~> 2.0"
@@ -84,4 +85,5 @@ gem 'prawn'
 gem 'will_paginate', '~> 3.3'
 gem 'bcrypt', '~> 3.1.7'
 gem 'grape'
+gem 'grape-entity'
 
