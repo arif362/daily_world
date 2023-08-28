@@ -5,28 +5,28 @@
         "lines": [
           1,
           null,
-          0,
-          0,
+          1,
+          1,
           null
         ]
       },
       "/Users/arif/development/learning/daily_world/spec/rails_helper.rb": {
         "lines": [
           null,
+          1,
           null,
           1,
           1,
           null,
           null,
           1,
+          null,
+          1,
+          null,
+          null,
           1,
           1,
           null,
-          0,
-          null,
-          null,
-          0,
-          0,
           null,
           null,
           null,
@@ -46,40 +46,604 @@
           null,
           null,
           null,
-          null,
-          0,
+          1,
           null,
           0,
           0,
           null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/config/environment.rb": {
+        "lines": [
+          null,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/config/application.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/config/boot.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/config/environments/test.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/config/initializers/active_storage.rb": {
+        "lines": [
+          1
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/config/initializers/assets.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/config/initializers/content_security_policy.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/config/initializers/filter_parameter_logging.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/config/initializers/inflections.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/config/initializers/mime_types.rb": {
+        "lines": [
+          1
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/config/initializers/permissions_policy.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/spec/factories/authentication_tokens.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/spec/factories/blog_articles.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/spec/factories/users.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/config/routes.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/api/daily_articles/v1/base.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/api/error_hundle.rb": {
+        "lines": [
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/api/daily_articles/v1/users.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          2,
+          2,
+          2,
+          2,
+          2,
+          null,
+          2,
+          1,
+          1,
+          null,
+          null,
+          2,
+          2,
+          2,
+          2,
+          null,
+          2,
+          null,
+          1,
+          1,
           0,
           null,
           0,
-          null,
-          null,
-          null,
-          null,
           0,
           null,
           null,
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/helpers/active_sessions_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/models/admin.rb": {
+        "lines": [
+          1,
+          1,
           0,
           null,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/helpers/admin/admins_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/helpers/admin/categories_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/helpers/admin/companies_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/helpers/admin/skills_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/helpers/articles_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/models/blog.rb": {
+        "lines": [
+          1,
+          1,
+          1,
           null,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/helpers/blog/authors_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/helpers/blog/comments_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/helpers/confirmations_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/models/job.rb": {
+        "lines": [
+          1,
+          1,
           0,
           null,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/helpers/job/posts_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/helpers/notifications_helper.rb": {
+        "lines": [
+          1,
+          1,
+          0,
           null,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/helpers/passwords_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/helpers/profiles_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/helpers/sessions_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/helpers/static_pages_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/helpers/users_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/models/authentication_token.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
           null
         ]
       },
@@ -87,18 +651,38 @@
         "lines": [
           1,
           null,
-          0,
-          0,
+          1,
+          1,
           null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
+          null,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/models/blog/article.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -107,25 +691,133 @@
         "lines": [
           1,
           null,
+          1,
+          null,
+          1,
+          4,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          0,
           0,
           null,
           0,
+          null,
           0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
           0,
           0,
           null,
           null,
-          0,
-          0,
-          0,
-          null,
+          1,
           0,
           0,
           null,
           null,
-          0,
+          1,
+          1,
+          2,
+          null,
+          null,
+          1,
+          1,
+          1,
           0,
           null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          0,
           null,
           null
         ]
@@ -134,9 +826,9 @@
         "lines": [
           1,
           null,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
           null,
           null,
           null
@@ -144,80 +836,50 @@
       },
       "/Users/arif/development/learning/daily_world/spec/requests/user_with_token_entity_spec.rb": {
         "lines": [
-          1,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null
+          1
         ]
       },
       "/Users/arif/development/learning/daily_world/spec/requests/users_spec.rb": {
         "lines": [
           1,
           null,
-          0,
-          0,
+          1,
+          1,
+          1,
+          1,
           null,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
+          1,
+          1,
           null,
           null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
           null,
-          0,
+          1,
           null,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/models/blog/author.rb": {
+        "lines": [
+          1,
           null,
-          null,
-          null,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null,
+          1,
+          5,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/arif/development/learning/daily_world/app/models/profile.rb": {
+        "lines": [
+          1,
+          1,
           null
         ]
       }
     },
-    "timestamp": 1693198527
+    "timestamp": 1693225445
   }
 }

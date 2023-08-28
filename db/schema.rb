@@ -86,7 +86,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_27_141936) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "author_id", null: false
+    t.bigint "author_id"
     t.index ["author_id"], name: "index_blog_articles_on_author_id"
   end
 
@@ -143,7 +143,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_27_141936) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "authentication_tokens", "users"
-  add_foreign_key "blog_articles", "users", column: "author_id"
+  add_foreign_key "blog_articles", "profiles", column: "author_id"
   add_foreign_key "blog_comments", "blog_articles", column: "article_id"
   add_foreign_key "blog_comments", "users", column: "author_id"
   add_foreign_key "profiles", "users"

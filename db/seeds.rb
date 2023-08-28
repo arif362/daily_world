@@ -12,9 +12,9 @@ puts 'Populating articles by fake data'
 # Blog::Comment.destroy_all
 # Blog::Article.destroy_all
 # Blog::Author.destroy_all
-
+user = User.find_by(email: 'admin@dw.com')
 10.times.each do |_t|
-  author = Blog::Author.create(full_name:Faker::Name.unique.name)
+  author = user.create_author!
   puts 'Author Created'
 
   100.times.each do |_t|
