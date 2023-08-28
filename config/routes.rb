@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  mount Base => '/'
+  mount DailyArticles::V1::Base => '/'
 
   resources :profiles
   post "login", to: "sessions#create"
