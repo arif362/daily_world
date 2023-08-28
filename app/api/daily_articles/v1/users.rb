@@ -1,17 +1,17 @@
 module DailyArticles
   module V1
     class Users < Base
-      desc 'End-points for the Login'
       resources :users do
 
-        desc 'Login via email and password'
+        desc 'User registration'
         params do
           requires :email, type: String, desc: 'email'
           requires :password, type: String, desc: 'password'
+          requires :password_confirmation, same_as: :password, type: String, desc: 'password'
           requires :full_name, type: String, desc: 'full_name'
         end
         post do
-          user = User.create!(params)
+          User.create!(params)
           status :created
         end
 
