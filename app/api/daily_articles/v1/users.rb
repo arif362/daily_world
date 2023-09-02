@@ -13,6 +13,7 @@ module DailyArticles
         post do
           User.create!(params)
           status :created
+          # present token, with: DailyArticles::V1::Entities::UserEntity
         end
 
         desc 'Login via email and password'

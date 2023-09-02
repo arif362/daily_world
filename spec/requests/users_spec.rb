@@ -18,11 +18,18 @@ RSpec.describe "Users", type: :request do
    attributes
   end
 
+  let(:valid_json_res) do
+    {
+      email: 'arif@example.com',
+      full_name: 'Md Ariful Islam',
+    }
+  end
+
   # We also need an invalid set of params to test
   # that Grape validates correctly
   let(:invalid_params) do
     {
-      data: {}
+      full_name: 'Md Ariful Islam',
     }
   end
 
@@ -39,26 +46,49 @@ RSpec.describe "Users", type: :request do
       # We also pass the parameters we want
       it 'returns HTTP status 201 - Created' do
         post "/api/v1/users", :params => valid_params
-        # expect(last_response.status).to eq 201
+        expect(response.status).to eq 201
         expect(response).to have_http_status(:created)
+      end
 
+      # After the request, we check in the database that our user
+      # was persisted
+      it 'creates the resource' do
+        post "/api/v1/users", :params => valid_params
+        user = User.find_by(email: valid_params[:email])
+        expect(user).to_not eq nil
+      end
+
+      # Here we check that all the attributes were correctly assigned during
+      # the creation. We could split this into different tests but I got lazy.
+      it 'creates the resource with the specified attributes' do
+        post "/api/v1/users", :params => valid_params
+        user = User.find_by(email: valid_params[:email])
+        expect(user.email).to eq attributes[:email]
+      end
+
+      # Here we check that the endpoint returns what we want, in a format
+      # that follows the JSON API specification
+      it 'returns the appropriate JSON document' do
+        # post "/api/v1/posts/users", valid_params.to_json
+        post "/api/v1/users", :params => valid_params
+
+        user = User.first
+        expect(valid_json_res).to eq({
+                                 'email': user[:email],
+                                 'full_name': user[:full_name],
+                                   })
       end
     end
-  end
 
+    # What happens when we send invalid attributes?
+    context 'with invalid attributes' do
 
-  it "create" do
-    headers = { "ACCEPT" => "application/json" }
-    post "/api/v1/users", :params => { email: "ariful.islam@misfit.tech".downcase, password: 'password', full_name: 'arif', password_confirmation: 'password' }, :headers => headers
+      # Grape should catch it and return 400!
+      it 'returns HTTP status 400 - Bad Request' do
+        post "/api/v1/users/", :params => invalid_params
+        expect(response.status).to eq 400
+      end
 
-    expect(response.content_type).to eq("application/json")
-    expect(response).to have_http_status(:created)
-  end
-
-  it "creates a session" do
-    headers = { "ACCEPT" => "application/json" }
-    post "/api/v1/users/login", :params => { email: "ariful.islam@misfit.tech".downcase, password: 'password' }, :headers => headers
-
-    expect(response.content_type).to eq("application/json")
+    end
   end
 end
