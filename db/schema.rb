@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_27_141936) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_05_001129) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -156,7 +156,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_27_141936) do
   add_foreign_key "authentication_tokens", "users"
   add_foreign_key "blog_articles", "profiles", column: "author_id"
   add_foreign_key "blog_comments", "blog_articles", column: "article_id"
-  add_foreign_key "blog_comments", "users", column: "author_id"
   add_foreign_key "job_posts", "job_companies"
   add_foreign_key "profiles", "users"
 end

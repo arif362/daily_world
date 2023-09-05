@@ -12,9 +12,12 @@ puts 'Populating articles by fake data'
 # Blog::Comment.destroy_all
 # Blog::Article.destroy_all
 # Blog::Author.destroy_all
-user = User.find_by(email: 'admin@dw.com')
+user = User.find_or_create_by(email: 'admin@dw.com') do |user|
+  user.password = 'password'
+  user.full_name = Faker::Name.name
+end
 10.times.each do |_t|
-  author = user.create_author!
+  author = Blog::Author.find_or_create_by(user: user)
   puts 'Author Created'
 
   100.times.each do |_t|
@@ -35,5 +38,5 @@ user = User.find_by(email: 'admin@dw.com')
     end
 
   end
-  puts "Articles and Comments created under the author name : #{author.full_name}"
+  puts "Articles and Comments created under the author name : #{author.user.full_name}"
 end
