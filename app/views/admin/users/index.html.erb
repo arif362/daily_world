@@ -14,7 +14,7 @@
         Name
       </th>
       <th scope="col" class="px-6 py-3">
-        Position
+        Role
       </th>
       <th scope="col" class="px-6 py-3">
         Status
@@ -44,16 +44,17 @@
           </div>
         </th>
         <td class="px-6 py-4">
-          Software Engineer
+          <%= user.admin.present? ? 'Admin' : 'Author' %>
         </td>
         <td class="px-6 py-4">
           <div class="flex items-center">
-            <div class="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div> Online
+            <div class="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div>
+            <%= user.confirmed_at.present? ? 'Active' : 'Inactive' %>
           </div>
         </td>
         <td class="px-6 py-4">
           <!-- Modal toggle -->
-          <a href="#" type="button" data-modal-target="editUserModal" data-modal-show="editUserModal" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit user</a>
+          <a href="#" type="button" data-modal-target="editUserModal" data-modal-show="editUserModal" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
         </td>
       </tr>
       </tbody>

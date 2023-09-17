@@ -5,7 +5,7 @@ class Admin::SkillsController < ApplicationController
 
   # GET /admin/skills or /admin/skills.json
   def index
-    @admin_skills = Admin::Skill.all
+    @skills = Admin::Skill.all
   end
 
   # GET /admin/skills/1 or /admin/skills/1.json
