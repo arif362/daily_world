@@ -1,5 +1,5 @@
 module NotificationsHelper
   def notifications
-    Notification.all.order(id: :desc).limit(5)
+    Notification.includes(:notifiable).order(id: :desc).limit(5)
   end
 end

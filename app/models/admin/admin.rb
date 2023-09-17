@@ -1,3 +1,3 @@
-class Admin::Admin < User
-
+class Admin::Admin < Profile
+  belongs_to :user
 end

@@ -54,6 +54,8 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
+  gem 'rspec-rails', '~> 6.0.0'
+  gem "factory_bot_rails"
 end
 
 group :development do
@@ -73,6 +75,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'simplecov', require: false
 end
 
 gem "tailwindcss-rails", "~> 2.0"
@@ -81,4 +84,7 @@ gem 'pg', '~> 1.4', '>= 1.4.5'
 gem 'prawn'
 gem 'will_paginate', '~> 3.3'
 gem 'bcrypt', '~> 3.1.7'
-
+gem 'grape'
+gem 'grape-entity'
+gem 'grape_on_rails_routes'
+gem 'rspec-grape'

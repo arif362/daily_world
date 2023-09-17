@@ -12,6 +12,11 @@ module Authentication
     redirect_to login_path, alert: "You need to login to access that page." unless user_signed_in?
   end
 
+  def authenticate_admin!
+    redirect_to login_path, alert: "You need to login to access that page." unless user_signed_in?
+    redirect_to root_path, alert: "You have no access to that page" unless current_user.admin.present?
+  end
+
   def login(user)
     reset_session
     active_session = user.active_sessions.create!(user_agent: request.user_agent, ip_address: request.ip)

@@ -1,4 +1,7 @@
 class Admin::CompaniesController < ApplicationController
+  layout 'admin/admins'
+  before_action :authenticate_user!, :authenticate_admin!
+
   before_action :set_admin_company, only: %i[ show edit update destroy ]
 
   # GET /admin/companies or /admin/companies.json

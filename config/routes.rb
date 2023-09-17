@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
-  namespace :admin do
-    resources :admins
-    resources :skills
-    resources :categories
-    resources :companies
-  end
-  resources :admins
+  mount DailyArticles::V1::Base => '/'
+
+  resources :profiles
   post "login", to: "sessions#create"
   delete "logout", to: "sessions#destroy"
   get "login", to: "sessions#new"
@@ -17,7 +13,7 @@ Rails.application.routes.draw do
   resources :notifications
   put "account", to: "users#update"
   get "account", to: "users#edit"
-  get "profile", to: "users#show"
+  get "user_profile", to: "users#show"
   delete "account", to: "users#destroy"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :active_sessions, only: [:destroy] do
@@ -27,6 +23,8 @@ Rails.application.routes.draw do
   end
 
   # Defines the root path route ("/")
+  draw(:api)
   draw(:blog)
   draw(:job)
+  draw(:admin)
 end
