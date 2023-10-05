@@ -15,21 +15,23 @@
   <!-- Dropdown menu -->
   <div id="dropdownAvatarName" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
     <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
-      <div class="font-medium ">Pro User</div>
+      <div class="font-medium ">
+        <%= current_user.admin.present? ? 'Admin' : 'Author' %>
+      </div>
       <div class="truncate"> <%= current_user.email %> </div>
     </div>
-    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
+    <ul class="text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
       <li><a href="<%= user_profile_path %>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a></li>
       <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a></li>
       <li><a href="<%= articles_path %>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"> Daily Articles </a></li>
       <li><a href="<%= job_posts_path %>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"> Daily Jobs </a></li>
       <% if current_user.admin.present? %>
-      <li><a href="<%= admin_admins_path %>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"> Admin Panel </a></li>
+      <li><a href="<%= admin_dashboard_path %>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"> Admin | Dashboard </a></li>
       <% end %>
     </ul>
-    <div class="py-2">
+    <div class="py-2 menu-item-center hover:bg-gray-100 dark:hover:bg-gray-600">
       <%= button_to logout_path, method: :delete, class: 'block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white' do %>
-        <div class="items-center"> Sign out </div>
+        <div class="items-center font-medium"> Sign out </div>
       <% end %>
     </div>
   </div>

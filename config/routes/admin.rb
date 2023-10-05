@@ -1,4 +1,5 @@
 namespace :admin do
+  get 'dashboard', to: 'admins#dashboard'
   resources :admins
   resources :skills
   resources :categories
