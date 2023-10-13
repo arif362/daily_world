@@ -3,13 +3,16 @@
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-2xl">Companies</h1>
-    <%= link_to 'New company', new_admin_company_path, class: "rounded-lg py-1 px-3 bg-blue-600 text-white block font-medium" %>
+  <div class="p-4">
+    <div class="flex justify-between items-center">
+      <h1 class="font-bold text-2xl">Companies</h1>
+      <%= link_to 'New company', new_admin_company_path, class: "rounded-lg py-1 px-3 bg-blue-600 text-white block font-medium" %>
+    </div>
+
+    <!--Search bar-->
+    <%= render 'admin/shared/search_bar' %>
   </div>
 
-  <!--Search bar-->
-  <%= render 'admin/shared/search_bar' %>
   <!-- set table head and body-->
   <% content_for :t_h_b do %>
     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
