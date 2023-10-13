@@ -6,7 +6,7 @@ class Admin::CompaniesController < ApplicationController
 
   # GET /admin/companies or /admin/companies.json
   def index
-    @admin_companies = Admin::Company.all
+    @admin_companies = Admin::Company.paginate(page: params[:page]).order(name: :asc)
   end
 
   # GET /admin/companies/1 or /admin/companies/1.json
