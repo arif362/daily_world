@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module DailyWorld
   class Application < Rails::Application
+    WillPaginate.per_page = 10
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
     # config.active_storage.variant_processor = :mini_magick

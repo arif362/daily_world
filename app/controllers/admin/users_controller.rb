@@ -4,6 +4,6 @@ class Admin::UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @users = User.includes(:profile_photo_attachment).order(id: :desc)
+    @users = User.includes(:profile_photo_attachment, :admin).paginate(page: params[:page]).order(full_name: :asc)
   end
 end

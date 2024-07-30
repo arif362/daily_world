@@ -5,7 +5,7 @@ class Admin::SkillsController < ApplicationController
 
   # GET /admin/skills or /admin/skills.json
   def index
-    @skills = Admin::Skill.all
+    @skills = Admin::Skill.paginate(page: params[:page]).order(name: :asc)
   end
 
   # GET /admin/skills/1 or /admin/skills/1.json

@@ -1,0 +1,83 @@
+<div class="p-4">
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-2xl">Articles</h1>
+    <%= link_to 'New Article', '#', class: "rounded-lg py-1 px-3 bg-blue-600 text-white block font-medium" %>
+  </div>
+<!--Search bar-->
+<%= render 'admin/shared/search_bar' %>
+</div>
+<!-- set table head and body-->
+<% content_for :t_h_b do %>
+  <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+  <tr>
+    <th scope="col" class="p-4">
+      <div class="flex items-center">
+        <input id="checkbox-all-search" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+        <label for="checkbox-all-search" class="sr-only">checkbox</label>
+      </div>
+    </th>
+    <th scope="col" class="px-6 py-3">
+      Serial No
+    </th>
+    <th scope="col" class="px-6 py-3">
+      Body
+    </th>
+    <th scope="col" class="px-6 py-3">
+      Author
+    </th>
+    <th scope="col" class="px-6 py-3">
+      Created Date
+    </th>
+    <th scope="col" class="px-6 py-3">
+      Action
+    </th>
+  </tr>
+  </thead>
+  <% @articles.each.with_index(1) do |entry, index| %>
+    <tbody>
+    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+      <td class="w-4 p-4">
+        <div class="flex items-center">
+          <input id="checkbox-table-search-<%= entry.id %>" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+          <label for="checkbox-table-search-<%= entry.id %>" class="sr-only">checkbox</label>
+        </div>
+      </td>
+
+      <td class="px-6 py-4">
+        <div class="flex items-center">
+          <%= index %>
+        </div>
+      </td>
+
+      <td class="px-6 py-4">
+        <div class="flex items-center">
+          <%= entry.body %>
+        </div>
+      </td>
+
+      <td class="px-6 py-4">
+        <div class="flex items-center">
+          <%= link_to entry.author.user.full_name, admin_user_path(entry) %>
+        </div>
+      </td>
+
+      <td class="px-6 py-4">
+        <div class="flex items-center">
+          <%= entry.created_at %>
+        </div>
+      </td>
+
+      <td class="px-6 py-4">
+        <%= link_to 'View', admin_article_path(entry) %>
+      </td>
+    </tr>
+    </tbody>
+  <% end %>
+<% end %>
+
+<!-- set table head and body-->
+<%= render 'admin/shared/table' %>
+<!-- Pagination -->
+<%= render 'admin/shared/pagination', entries: @users %>
+<!-- Edit user modal -->
+<%= render 'admin/shared/modal' %>
